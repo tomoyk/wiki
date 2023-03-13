@@ -4121,18 +4121,18 @@
 <h1 id="helmwordpress">HelmでWordPressのインストールに失敗</h1>
 <h2 id="_1">はじめに</h2>
 <p>HelmチャートでWordPressをインストールした．</p>
-<pre><code>helm install wp27 bitnami/wordpress
+<pre><code>helm install wp23 bitnami/wordpress
 </code></pre>
 <p>その結果，WordPressのPodが起動せずMariaDBのPodは起動した．</p>
 <pre><code>$ kubectl get pod
 NAME             READY   STATUS    RESTARTS   AGE
-wp27-mariadb-0   0/1     Running   0          10s
+wp23-mariadb-0   0/1     Running   0          10s
 </code></pre>
 <p>DeploymentとReplicaSetを確認する．
 必要なPodが起動していないためReadyでないことがわかる．</p>
 <pre><code>$ kubectl get deploy
 NAME             READY   UP-TO-DATE   AVAILABLE   AGE
-wp27-wordpress   0/1     0            0           100s
+wp23-wordpress   0/1     0            0           100s
 
 $ kubectl get rs
 NAME                        DESIRED   CURRENT   READY   AGE
